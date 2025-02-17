@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+project.ext {
+    cucumberVersion = '7.20.1'
+    seleniumVersion = '4.17.0'
+    webDriverManagerVersion = '5.7.0'
+    extentReportVersion = '1.14.0'
+    assertVersion = '3.23.0'
+    junitVersion = '4.13.2'
+    serenityVesion = '4.2.11'
+}
+
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    implementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-testng:${cucumberVersion}"
+    implementation 'com.konghq:unirest-java:3.13.6'
+
+    implementation 'log4j:log4j:1.2.17'
+    implementation "io.github.bonigarcia:webdrivermanager:${webDriverManagerVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}

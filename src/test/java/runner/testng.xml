@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CucumberTestSuite" parallel="methods" thread-count="4">
+    <!-- Suite-level listeners (if any) -->
+    <listeners>
+
+    </listeners>
+
+    <!-- Test configuration -->
+    <test name="ParallelCucumberTest" parallel="methods">
+        <!-- Optional parameters can be passed to your tests -->
+        <parameter name="browser" value="chrome" />
+        <parameter name="environment" value="qa"/>
+        <parameter name="cucumber.filter.tags" value="@test"></parameter>
+
+        <!-- Classes section defines the test runner -->
+        <classes>
+            <class name="runner.Runner"/>
+        </classes>
+    </test>
+</suite>
