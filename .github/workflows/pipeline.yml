@@ -32,7 +32,7 @@ jobs:
         run: .\gradlew.bat build
 
       - name: Run Automation tests
-        run: .\gradlew.bat test
+        run: .\build.gradle test
 
       - name: upload tests report
         if: always()
