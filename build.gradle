@@ -33,7 +33,7 @@ dependencies {
 
 test {
     useTestNG() {
-        suites 'src/test/java/runner/testng.xml'
+        suites 'src/test/resources/runner/testng.xml'
     }
     outputs.upToDateWhen { false }  // Forces tests to run every time
 }
