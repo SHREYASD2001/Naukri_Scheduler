@@ -1,4 +1,4 @@
-name: automation testing pipeline
+name: Automation Testing Pipeline
 
 on:
   push:
@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Set up Java (JDK 11)
@@ -19,22 +19,23 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: setup Chrome driver version
+      - name: Install Chrome and ChromeDriver
         run: |
-          choco install googlechrome
-          choco install chromedriver
+          choco install googlechrome -y
+          choco install chromedriver -y
           chromedriver --version
 
-      - name: permission to gradle for execution
+      - name: Grant execute permission to Gradle (Only for Linux/macOS)
+        if: runner.os != 'Windows'
         run: chmod +x gradlew
 
-      - name: build project with gradle
-        run: .\gradlew.bat build
+      - name: Build Project with Gradle
+        run: .\gradlew.bat build  # Use `./gradlew build` for Linux/macOS
 
-      - name: Run Automation tests
-        run: .\build.gradle test
+      - name: Run Automation Tests
+        run: .\gradlew.bat test  # Run tests using Gradle
 
-      - name: upload tests report
+      - name: Upload Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
