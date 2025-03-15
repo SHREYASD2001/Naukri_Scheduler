@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 @CucumberOptions(
         features ="src/test/resources/features/", // Path to your feature files
-        glue = {"steps", "naukri.hooks"}, // to link the stepd define for this
+        glue = {"steps", "hooks"}, // to link the stepd define for this
         monochrome = true, //monochrome - wil remove unncecassry character form window
         tags="@test", //tags- to run the test with tag
         dryRun = true, //dryrun - check whether every feature steps has corresponding step define or not
