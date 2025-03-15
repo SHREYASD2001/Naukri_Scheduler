@@ -1,4 +1,4 @@
-package naukri.hooks;
+package hooks;
 
 import naukri.businessLayer.User;
 import naukri.configReader.ConfigReader;
