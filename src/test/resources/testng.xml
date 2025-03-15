@@ -6,7 +6,7 @@
     </listeners>
 
     <!-- Test configuration -->
-    <test name="ParallelCucumberTest" parallel="methods">
+    <test name="ParallelCucumberTest">
         <!-- Optional parameters can be passed to your tests -->
         <parameter name="browser" value="chrome" />
         <parameter name="environment" value="qa"/>
