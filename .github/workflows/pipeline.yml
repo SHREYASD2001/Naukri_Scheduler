@@ -2,7 +2,7 @@ name: Automation Testing Pipeline
 
 on:
   schedule:
-    - cron: "21 22 * * *"  # Runs every day at 21:15 UTC
+    - cron: "10 17 * * *"  # Runs every day at 21:15 UTC
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -23,11 +23,11 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: Install Chrome and ChromeDriver
-        run: |
-          choco install googlechrome -y --ignore-checksums
-          choco install chromedriver -y
-          chromedriver --version
+#      - name: Install Chrome and ChromeDriver
+#        run: |
+#          choco install googlechrome -y --ignore-checksums
+#          choco install chromedriver -y
+#          chromedriver --version
 
       - name: Grant Execute Permission to Gradle (For Linux/macOS)
         if: runner.os != 'Windows'
