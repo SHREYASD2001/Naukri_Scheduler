@@ -2,7 +2,7 @@ name: Automation Testing Pipeline
 
 on:
   schedule:
-    - cron: "09 16 * * *"  # Runs every day at 21:15 UTC
+    - cron: "22 16 * * *"  # Runs every day at 21:15 UTC
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
