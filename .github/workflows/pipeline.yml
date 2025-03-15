@@ -2,7 +2,7 @@ name: Automation Testing Pipeline
 
 on:
   schedule:
-    - cron: "19 21 * * *"  # Runs every day at 21:15 UTC
+    - cron: "25 21 * * *"  # Runs every day at 21:15 UTC
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -13,8 +13,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Print Current Time
-        run: date /T && time /T  # This helps verify actual execution time on Windows
+      - name: Print Date & Time (Windows)
+        run: Get-Date
+        shell: pwsh
 
       - name: Set up Java (JDK 11)
         uses: actions/setup-java@v3
