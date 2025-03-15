@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="CucumberTestSuite" parallel="methods" thread-count="4">
+<suite name="CucumberTestSuite" parallel="tests" thread-count="2">
     <!-- Suite-level listeners (if any) -->
     <listeners>
 
