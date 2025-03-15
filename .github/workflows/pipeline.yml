@@ -2,7 +2,7 @@ name: Automation Testing Pipeline
 
 on:
   schedule:
-    - cron: "10 21 * * *"  # Runs every day at 21:10
+    - cron: "15 21 * * *"  # Runs every day at 21:10
       workflow_dispatch:  # Allows manual triggering
 
 
@@ -13,6 +13,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Run a scheduled task
+        run: echo "This job runs at 21:10 UTC"
 
       - name: Set up Java (JDK 11)
         uses: actions/setup-java@v3
