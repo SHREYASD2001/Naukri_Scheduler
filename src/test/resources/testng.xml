@@ -10,11 +10,11 @@
         <!-- Optional parameters can be passed to your tests -->
         <parameter name="browser" value="chrome" />
         <parameter name="environment" value="qa"/>
-        <parameter name="cucumber.filter.tags" value="@test"></parameter>
+        <parameter name="cucumber.filter.tags" value="@test"/>
 
         <!-- Classes section defines the test runner -->
         <classes>
-            <class name="runner.Runner"/>
+            <class name="runner.TestRunner"/>
         </classes>
     </test>
 </suite>

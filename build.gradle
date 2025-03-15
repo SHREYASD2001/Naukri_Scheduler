@@ -33,7 +33,23 @@ dependencies {
 }
 
 test {
-    useTestNG() {
-        suites 'src/test/resources/runner/testng.xml'
+    useTestNG()
+}
+
+tasks.register('testng', Test) {
+    dependsOn testClasses
+    classpath = files(sourceSets.test.output, configurations.testRuntimeClasspath)
+    useTestNG {
+        suites file('src/test/resources/testng.xml')
+    }
+
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams = true  // Ensures console logs are captured
+    }
+
+    reports {
+        junitXml.required = true
+        html.required = true  // Generates HTML reports
     }
 }
