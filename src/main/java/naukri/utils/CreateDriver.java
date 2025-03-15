@@ -3,6 +3,7 @@ package naukri.utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.slf4j.LoggerFactory;
@@ -43,7 +44,8 @@ public class CreateDriver {
                 break;
 
             case "edge":
-                System.setProperty("webdriver.edge.driver", "path/to/msedgedriver.exe");
+                WebDriverManager.edgedriver().setup();
+                tlDriver.set(new EdgeDriver());
                 //This is deprecated in current release
 //                WebDriver driver = new EdgeDriver();
                 break;

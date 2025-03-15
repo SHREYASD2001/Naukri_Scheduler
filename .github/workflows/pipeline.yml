@@ -33,7 +33,7 @@ jobs:
         run: .\gradlew.bat build  # Use ./gradlew build for Linux/macOS
 
       - name: Run Automation Tests
-        run: .\gradlew.bat testng --info  # Ensure Gradle runs tests with logs
+        run: .\gradlew.bat test --info  # Ensure Gradle runs tests with logs
 
 #      - name: Run Tests Using Maven and TestNG
 #        run: mvn test -DsuiteXmlFile=src/test/resources/runner/testng.xml

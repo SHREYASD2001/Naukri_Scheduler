@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
         glue = {"steps", "hooks"}, // to link the stepd define for this
         monochrome = true, //monochrome - wil remove unncecassry character form window
         tags="@test", //tags- to run the test with tag
-        dryRun = true, //dryrun - check whether every feature steps has corresponding step define or not
+//        dryRun = true, //dryrun - check whether every feature steps has corresponding step define or not
         publish = true, //publish - it generates a public link to a detailed online report of your Cucumber test run.
         plugin = {
                 "pretty", // for the report format
