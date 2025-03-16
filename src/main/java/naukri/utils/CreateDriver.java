@@ -23,7 +23,7 @@ public class CreateDriver {
             case "chrome":
                 logger.info("Current browserName is chrome.");
                 logger.info("Creating chrome browser");
-                WebDriverManager.chromedriver().setup();
+//                WebDriverManager.chromedriver().setup();
                 logger.info("Completed initial setup of chrome");
                 logger.info("Created Chrome instance");
                 tlDriver.set(new ChromeDriver());

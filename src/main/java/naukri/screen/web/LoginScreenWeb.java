@@ -2,17 +2,15 @@ package naukri.screen.web;
 
 import naukri.screen.LoginScreen;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.logging.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.time.Duration;
 
 public class LoginScreenWeb extends LoginScreen {
-    private WebDriver driver;
+    private final WebDriver driver;
     public LoginScreenWeb(WebDriver driver) {
         this.driver = driver;
     }
@@ -30,8 +28,7 @@ public class LoginScreenWeb extends LoginScreen {
     @Override
     public String userFetchesTheDefaultname() {
         waitTillPageIsLoaded(By.cssSelector("div.middle-section-visible"));
-        String text = waitTillElementIsPresent(By.cssSelector("div.info__heading")).getText();
-        return text;
+        return waitTillElementIsPresent(By.cssSelector("div.info__heading")).getText();
     }
 
     @Override
@@ -79,8 +76,7 @@ public class LoginScreenWeb extends LoginScreen {
 
 
     private WebElement waitTillElementIsPresent(By locator) {
-        WebElement element = new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(locator));
-        return element;
+        return new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     private void performsExplicitClick(By locator) {
